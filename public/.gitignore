@@ -8,3 +8,4 @@ tmp
 .jshintrc
 .travis.yml
 AngModule.iml
+.bowerrc
