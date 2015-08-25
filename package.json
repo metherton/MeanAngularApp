@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "stop": "pkill -INT myApp"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -23,10 +24,6 @@
     "karma-junit-reporter": "^0.3.3",
     "karma-phantomjs-launcher": "^0.2.1",
     "phantomjs": "^1.9.18"
-  },
-  "scripts": {
-    "start": "http-server -a localhost -p 8000 -c-1",
-    "stop": "pkill -INT myApp"
   }
 
 }
