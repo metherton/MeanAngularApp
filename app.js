@@ -57,5 +57,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+process.title = 'myApp';
 
 module.exports = app;
