@@ -8,7 +8,7 @@
     <div id="invite-controls">
         <p class="instructions">Invite an Endpoint</p>
         <input id="invite-to" type="text" placeholder="Address to send an invite to" />
-        <button id="button-invite">Send Invite</button>
+        <button ng-click="vm.sendInvite()" id="button-invite">Send Invite</button>
     </div>
     <div id="log">
         <p>&gt;&nbsp;<span id="log-content">Preparing to listen</span>...</p>
