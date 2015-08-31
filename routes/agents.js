@@ -11,6 +11,7 @@ router.get('/:who', function(req, res, next) {
   console.log('who', req.params.who);
   // You will need your Account Sid and a SigningKey Sid and Secret
 // to generate an Access Token for your SDK endpoint to connect to Twilio.
+  console.log('in who server');
   var accountSid = 'xx';
   var signingKeySid = 'yy';
   var signingKeySecret = 'zz';

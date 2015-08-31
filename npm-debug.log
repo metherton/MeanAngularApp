@@ -1,0 +1,102 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'twilio-rtc-conversations' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose install initial load of /Users/martin/nodeprojects/MeanApp/package.json
+5 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/body-parser/package.json
+6 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/bootstrap/package.json
+7 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/cookie-parser/package.json
+8 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/debug/package.json
+9 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/express/package.json
+10 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/jade/package.json
+11 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/jasmine-core/package.json
+12 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/karma/package.json
+13 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/karma-chrome-launcher/package.json
+14 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/karma-firefox-launcher/package.json
+15 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/karma-jasmine/package.json
+16 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/karma-junit-reporter/package.json
+17 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/karma-phantomjs-launcher/package.json
+18 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/lodash/package.json
+19 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/mocha/package.json
+20 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/morgan/package.json
+21 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/phantomjs/package.json
+22 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/serve-favicon/package.json
+23 verbose installManyTop reading scoped package data from /Users/martin/nodeprojects/MeanApp/node_modules/twilio/package.json
+24 verbose readDependencies loading dependencies from /Users/martin/nodeprojects/MeanApp/package.json
+25 silly cache add args [ 'twilio-rtc-conversations', null ]
+26 verbose cache add spec twilio-rtc-conversations
+27 silly cache add parsed spec { raw: 'twilio-rtc-conversations',
+27 silly cache add   scope: null,
+27 silly cache add   name: 'twilio-rtc-conversations',
+27 silly cache add   rawSpec: '',
+27 silly cache add   spec: '*',
+27 silly cache add   type: 'range' }
+28 silly addNamed twilio-rtc-conversations@*
+29 verbose addNamed "*" is a valid semver range for twilio-rtc-conversations
+30 silly addNameRange { name: 'twilio-rtc-conversations', range: '*', hasData: false }
+31 silly mapToRegistry name twilio-rtc-conversations
+32 silly mapToRegistry using default registry
+33 silly mapToRegistry registry https://registry.npmjs.org/
+34 silly mapToRegistry uri https://registry.npmjs.org/twilio-rtc-conversations
+35 verbose addNameRange registry:https://registry.npmjs.org/twilio-rtc-conversations not in flight; fetching
+36 verbose request uri https://registry.npmjs.org/twilio-rtc-conversations
+37 verbose request no auth needed
+38 info attempt registry request try #1 at 9:19:45 PM
+39 verbose request using bearer token for auth
+40 verbose request id ad1855a43d9c34d6
+41 http request GET https://registry.npmjs.org/twilio-rtc-conversations
+42 http 404 https://registry.npmjs.org/twilio-rtc-conversations
+43 verbose headers { 'content-type': 'application/json',
+43 verbose headers   'cache-control': 'max-age=0',
+43 verbose headers   'content-length': '2',
+43 verbose headers   'accept-ranges': 'bytes',
+43 verbose headers   date: 'Mon, 31 Aug 2015 19:19:45 GMT',
+43 verbose headers   via: '1.1 varnish',
+43 verbose headers   connection: 'keep-alive',
+43 verbose headers   'x-served-by': 'cache-ams4126-AMS',
+43 verbose headers   'x-cache': 'MISS',
+43 verbose headers   'x-cache-hits': '0',
+43 verbose headers   'x-timer': 'S1441048785.585534,VS0,VE99' }
+44 silly get cb [ 404,
+44 silly get   { 'content-type': 'application/json',
+44 silly get     'cache-control': 'max-age=0',
+44 silly get     'content-length': '2',
+44 silly get     'accept-ranges': 'bytes',
+44 silly get     date: 'Mon, 31 Aug 2015 19:19:45 GMT',
+44 silly get     via: '1.1 varnish',
+44 silly get     connection: 'keep-alive',
+44 silly get     'x-served-by': 'cache-ams4126-AMS',
+44 silly get     'x-cache': 'MISS',
+44 silly get     'x-cache-hits': '0',
+44 silly get     'x-timer': 'S1441048785.585534,VS0,VE99' } ]
+45 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/twilio-rtc-conversations
+45 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:239:14)
+45 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+45 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:354:22)
+45 verbose stack     at Request.emit (events.js:110:17)
+45 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1207:14)
+45 verbose stack     at Request.emit (events.js:129:20)
+45 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1153:12)
+45 verbose stack     at IncomingMessage.emit (events.js:129:20)
+45 verbose stack     at _stream_readable.js:908:16
+45 verbose stack     at process._tickCallback (node.js:355:11)
+46 verbose statusCode 404
+47 verbose pkgid twilio-rtc-conversations
+48 verbose cwd /Users/martin/nodeprojects/MeanApp
+49 error Darwin 14.1.0
+50 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "twilio-rtc-conversations"
+51 error node v0.12.7
+52 error npm  v2.11.3
+53 error code E404
+54 error 404 Registry returned 404 for GET on https://registry.npmjs.org/twilio-rtc-conversations
+54 error 404
+54 error 404 'twilio-rtc-conversations' is not in the npm registry.
+54 error 404 You should bug the author to publish it (or use the name yourself!)
+54 error 404 It was specified as a dependency of 'MeanApp'
+54 error 404
+54 error 404 Note that you can also install from a
+54 error 404 tarball, folder, http url, or git url.
+55 verbose exit [ 1, true ]

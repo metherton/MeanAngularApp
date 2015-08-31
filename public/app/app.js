@@ -9,5 +9,14 @@ angular.module('myApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+}])
+    .factory('t', t);
+
+t.$inject = ['$window'];
+
+function t($window) {
+  return {
+    getTwillio: $window.Twilio
+  };
+}
 
