@@ -13,13 +13,13 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', View1Ctrl);
 
-function View1Ctrl($http, t) {
+function View1Ctrl($http, twilioConversation) {
 
   var vm = this;
   var previewMedia;
   var activeConversation;
 
-  var bla = t.getTwillio();
+  //var twilio = t.getTwillio();
 
 // choose between one of our three pre-generated Access Tokens
   var accessTokens = {'alice': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1zYXQ7dj0xIn0.eyJqdGkiOiJTSzE2YjlmNjk4MTlmYWY5NzJmYmM1NjVlMjZjZGZjODgzLTE0NDA3MDQwMTAiLCJpc3MiOiJTSzE2YjlmNjk4MTlmYWY5NzJmYmM1NjVlMjZjZGZjODgzIiwic3ViIjoiQUM1N2ExZjdlZGZhNzE2YTI3OTlmODE2NjkxMGZjMmUxOSIsIm5iZiI6MTQ0MDcwNDAxMCwiZXhwIjoxNDQwNzkwNDEwLCJncmFudHMiOlt7InJlcyI6Imh0dHBzOlwvXC9hcGkudHdpbGlvLmNvbVwvMjAxMC0wNC0wMVwvQWNjb3VudHNcL0FDNTdhMWY3ZWRmYTcxNmEyNzk5ZjgxNjY5MTBmYzJlMTlcL1Rva2Vucy5qc29uIiwiYWN0IjpbIlBPU1QiXX0seyJyZXMiOiJzaXA6YWxpY2VAQUM1N2ExZjdlZGZhNzE2YTI3OTlmODE2NjkxMGZjMmUxOS5lbmRwb2ludC50d2lsaW8uY29tIiwiYWN0IjpbImxpc3RlbiIsImludml0ZSJdfV19.U-rn9saT016EZu8RZtvv5F8dkHTqaox-stestnZxJqg',
@@ -29,7 +29,7 @@ function View1Ctrl($http, t) {
   var userName = 'alice';
 
   var accessToken = '';
-  $http.get({url: '/agents', params: [{who: userName}]}).then(function(response) {
+  $http.get({url: 'http://localhost:3000/agents', params: [{who: userName}]}).then(function(response) {
     accessToken = response.token;
   }, function(errResponse) {
     console.error('Error while fetching notes');
@@ -41,7 +41,8 @@ function View1Ctrl($http, t) {
 
  // var accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1zYXQ7dj0xIn0.eyJqdGkiOiJTSzE2YjlmNjk4MTlmYWY5NzJmYmM1NjVlMjZjZGZjODgzLTE0NDA3MDA2MzUiLCJpc3MiOiJTSzE2YjlmNjk4MTlmYWY5NzJmYmM1NjVlMjZjZGZjODgzIiwic3ViIjoiQUM1N2ExZjdlZGZhNzE2YTI3OTlmODE2NjkxMGZjMmUxOSIsIm5iZiI6MTQ0MDcwMDYzNSwiZXhwIjoxNDQwNzg3MDM1LCJncmFudHMiOlt7InJlcyI6Imh0dHBzOlwvXC9hcGkudHdpbGlvLmNvbVwvMjAxMC0wNC0wMVwvQWNjb3VudHNcL0FDNTdhMWY3ZWRmYTcxNmEyNzk5ZjgxNjY5MTBmYzJlMTlcL1Rva2Vucy5qc29uIiwiYWN0IjpbIlBPU1QiXX0seyJyZXMiOiJzaXA6cXVpY2tzdGFydEBBQzU3YTFmN2VkZmE3MTZhMjc5OWY4MTY2OTEwZmMyZTE5LmVuZHBvaW50LnR3aWxpby5jb20iLCJhY3QiOlsibGlzdGVuIiwiaW52aXRlIl19XX0.libAEus6nmPDwsWIO4QMmonZC1aTc7uIwtTjVcGWCH0';
 
-    var endpoint = new Twilio.Endpoint(accessToken);
+    //var endpoint = new Twilio.Endpoint(accessToken);
+  var endpoint = twilioConversation.Endpoint('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1zYXQ7dj0xIn0.eyJqdGkiOiJTSzE2YjlmNjk4MTlmYWY5NzJmYmM1NjVlMjZjZGZjODgzLTE0NDEwNTcyODciLCJpc3MiOiJTSzE2YjlmNjk4MTlmYWY5NzJmYmM1NjVlMjZjZGZjODgzIiwic3ViIjoiQUM1N2ExZjdlZGZhNzE2YTI3OTlmODE2NjkxMGZjMmUxOSIsIm5iZiI6MTQ0MTA1NzI4NywiZXhwIjoxNDQxMTQzNjg3LCJncmFudHMiOlt7InJlcyI6Imh0dHBzOlwvXC9hcGkudHdpbGlvLmNvbVwvMjAxMC0wNC0wMVwvQWNjb3VudHNcL0FDNTdhMWY3ZWRmYTcxNmEyNzk5ZjgxNjY5MTBmYzJlMTlcL1Rva2Vucy5qc29uIiwiYWN0IjpbIlBPU1QiXX0seyJyZXMiOiJzaXA6cXVpY2tzdGFydEBBQzU3YTFmN2VkZmE3MTZhMjc5OWY4MTY2OTEwZmMyZTE5LmVuZHBvaW50LnR3aWxpby5jb20iLCJhY3QiOlsibGlzdGVuIiwiaW52aXRlIl19XX0.E5fL_u7357dDmyZ2eb0Pf_8z0X7KxfNYzcWzhvBvkKw');
 
 // check for WebRTC
   if (!navigator.webkitGetUserMedia && !navigator.mozGetUserMedia) {
