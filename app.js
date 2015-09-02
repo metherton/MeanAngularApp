@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var twilio = require('twilio');
 
 
 var routes = require('./routes/index');
@@ -63,3 +64,13 @@ app.use(function(err, req, res, next) {
 process.title = 'myApp';
 
 module.exports = app;
+
+
+//var accountSid = 'AC57a1f7edfa716a2799f8166910fc2e19';
+//var signingKeySid = 'SK3d043b705d51122d65f2bf7a35f1fa01';
+//var signingKeySecret = 'm6IlLsEW7r5DJNPnzD9zV485tgzRg3xM';
+//
+//var token = new twilio.AccessToken(signingKeySid, accountSid, signingKeySecret);
+//token.addEndpointGrant('bob');
+//token.enableNTS();
+//console.log(token.toJwt());

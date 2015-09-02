@@ -4,7 +4,9 @@ var twilio = require('twilio');
 
 var TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID,
     TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN,
-    TWILIO_NUMBER = process.env.TWILIO_NUMBER;
+    TWILIO_NUMBER = process.env.TWILIO_NUMBER,
+    TWILIO_SIGNING_KEY_SID = process.env.TWILIO_SIGNING_KEY_SID,
+    TWILIO_SIGNING_KEY_SECRET = process.env.TWILIO_SIGNING_KEY_SECRET;
 
 /* GET agents listing. */
 router.get('/:who', function(req, res, next) {
@@ -17,11 +19,22 @@ router.get('/:who', function(req, res, next) {
   var signingKeySecret = 'z';
 
   //var token = new twilio.AccessToken(signingKeySid, accountSid, signingKeySecret);
-  var token = new twilio.AccessToken(signingKeySid, accountSid);
+  var token = new twilio.AccessToken(TWILIO_SIGNING_KEY_SID, TWILIO_ACCOUNT_SID, TWILIO_SIGNING_KEY_SECRET);
   token.addEndpointGrant(req.params.who);
   token.enableNTS();
   console.log(token.toJwt(signingKeySecret));
-  res.send({token: token.toJwt(signingKeySecret)});
+  res.send({token: token.toJwt()});
+
+
+//var accountSid = 'AC57a1f7edfa716a2799f8166910fc2e19';
+//var signingKeySid = 'SK3d043b705d51122d65f2bf7a35f1fa01';
+//var signingKeySecret = 'm6IlLsEW7r5DJNPnzD9zV485tgzRg3xM';
+//
+//var token = new twilio.AccessToken(signingKeySid, accountSid, signingKeySecret);
+//token.addEndpointGrant('bob');
+//token.enableNTS();
+//console.log(token.toJwt());
+
 });
 
 module.exports = router;
