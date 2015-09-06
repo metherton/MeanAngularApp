@@ -27,11 +27,7 @@ router.get('/:who', function(req, res, next) {
   token.addEndpointGrant(req.params.who);
   token.enableNTS();
   res.send({token: token.toJwt()});
-
-
-//var accountSid = 'AC57a1f7edfa716a2799f8166910fc2e19';
-//var signingKeySid = 'SK3d043b705d51122d65f2bf7a35f1fa01';
-//var signingKeySecret = 'm6IlLsEW7r5DJNPnzD9zV485tgzRg3xM';
+    
 //
 //var token = new twilio.AccessToken(signingKeySid, accountSid, signingKeySecret);
 //token.addEndpointGrant('bob');
