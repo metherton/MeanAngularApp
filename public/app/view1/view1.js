@@ -31,8 +31,10 @@ function View1Ctrl($http, twilioConversation, tokenResource) {
 
   function successHandler(response) {
     accessToken = response.token;
-    console.log('access token', accessToken);
+    console.log('token', accessToken);
     endpoint = new Twilio.Endpoint(accessToken);
+//    accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1zYXQ7dj0xIn0.eyJqdGkiOiJTSzE2YjlmNjk4MTlmYWY5NzJmYmM1NjVlMjZjZGZjODgzLTE0NDEyMzI3ODciLCJpc3MiOiJTSzE2YjlmNjk4MTlmYWY5NzJmYmM1NjVlMjZjZGZjODgzIiwic3ViIjoiQUM1N2ExZjdlZGZhNzE2YTI3OTlmODE2NjkxMGZjMmUxOSIsIm5iZiI6MTQ0MTIzMjc4NywiZXhwIjoxNDQxMzE5MTg3LCJncmFudHMiOlt7InJlcyI6Imh0dHBzOlwvXC9hcGkudHdpbGlvLmNvbVwvMjAxMC0wNC0wMVwvQWNjb3VudHNcL0FDNTdhMWY3ZWRmYTcxNmEyNzk5ZjgxNjY5MTBmYzJlMTlcL1Rva2Vucy5qc29uIiwiYWN0IjpbIlBPU1QiXX0seyJyZXMiOiJzaXA6Ym9iQEFDNTdhMWY3ZWRmYTcxNmEyNzk5ZjgxNjY5MTBmYzJlMTkuZW5kcG9pbnQudHdpbGlvLmNvbSIsImFjdCI6WyJsaXN0ZW4iLCJpbnZpdGUiXX1dfQ.-owNxtG5B0GWYRRBr6oHAaXGqhehaDHZbu4Qzetv6ak';
+    endpoint = twilioConversation.Endpoint(accessToken);
     endpoint.listen().then(
         endpointConnected,
         function (error) {
