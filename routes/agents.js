@@ -22,7 +22,6 @@ router.get('/:who', function(req, res, next) {
   //var token = new twilio.AccessToken(TWILIO_SIGNING_KEY_SID, TWILIO_ACCOUNT_SID, TWILIO_SIGNING_KEY_SECRET);
 
     //martine
-    //var token = new twilio.AccessToken('SKf24a9109d0762f078f7b5deaa141bbae', 'AC57a1f7edfa716a2799f8166910fc2e19', 'CC6vM3m9340VInX8df2jrZYdJ3D2pqKp');
     var token = new twilio.AccessToken(TWILIO_SIGNING_KEY_SID, TWILIO_ACCOUNT_SID, TWILIO_SIGNING_KEY_SECRET);
 
   token.addEndpointGrant(req.params.who);
